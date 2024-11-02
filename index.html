@@ -3,21 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Study Flashcards</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <div class="container">
         <h1>Study Flashcards</h1>
-        <nav>
-            <ul>
-                <li><a href="flashcards.html">Flashcards</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h2>Welcome!</h2>
-        <p>Click on Flashcards to view your study materials.</p>
-    </main>
+        
+        <div class="subject-section" id="hass-section">
+            <h2>HASS</h2>
+            <div class="flashcards-container" id="flashcards-container"></div>
+        </div>
+
+        <div class="subject-section" id="english-section">
+            <h2>English</h2>
+            <div class="flashcards-container" id="flashcards-container"></div>
+        </div>
+
+        <div class="subject-section" id="math-section">
+            <h2>Math</h2>
+            <div class="flashcards-container" id="flashcards-container"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
