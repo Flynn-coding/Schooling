@@ -4,28 +4,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study Flashcards</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #flashcards {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .flashcard {
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.2s;
+        }
+        .flashcard:hover {
+            transform: scale(1.05);
+        }
+        h3 {
+            margin: 0;
+        }
+        p {
+            margin: 10px 0 0 0;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Study Flashcards</h1>
-        
-        <div class="subject-section" id="hass-section">
-            <h2>HASS</h2>
-            <div class="flashcards-container" id="flashcards-container"></div>
-        </div>
-
-        <div class="subject-section" id="english-section">
-            <h2>English</h2>
-            <div class="flashcards-container" id="flashcards-container"></div>
-        </div>
-
-        <div class="subject-section" id="math-section">
-            <h2>Math</h2>
-            <div class="flashcards-container" id="flashcards-container"></div>
-        </div>
+    <h1>Study Flashcards</h1>
+    <div>
+        <button id="hass">HASS</button>
+        <button id="english">English</button>
+        <button id="math">Math</button>
     </div>
+    <div id="flashcards"></div>
 
-    <script src="script.js"></script>
+    <script>
+        const flashcards = {
+            HASS: [
+                { question: "What are the main causes of climate change?", answer: "The primary causes of climate change include greenhouse gas emissions from fossil fuel combustion, deforestation, industrial processes, and agricultural practices. Human activities have significantly increased concentrations of CO2 and other greenhouse gases in the atmosphere, leading to global warming and extreme weather events." },
+                { question: "How does globalization affect local cultures?", answer: "Globalization can lead to cultural homogenization, where local traditions and languages may diminish as global brands and media spread. However, it can also foster cultural exchange and appreciation, enriching local cultures through exposure to diverse perspectives and practices." },
+                { question: "What is human wellbeing?", answer: "Human wellbeing encompasses the physical, mental, and social health of individuals and communities. It is influenced by factors such as income, education, environment, and social support, reflecting the overall quality of life and opportunities available to people." },
+                { question: "How do government policies impact environmental conservation?", answer: "Government policies play a critical role in environmental conservation by setting regulations that protect natural resources, promoting sustainable practices, and providing incentives for conservation efforts. Effective policies can lead to improved ecological outcomes and community engagement." },
+                { question: "What are the effects of urbanization on society?", answer: "Urbanization can lead to economic growth and improved living standards but may also cause challenges such as overcrowding, increased pollution, and social inequality. Effective urban planning is essential to mitigate negative impacts and ensure sustainable development." },
+                { question: "What is the role of technology in education?", answer: "Technology enhances education by providing access to information, enabling personalized learning experiences, and facilitating communication and collaboration. It can bridge gaps in education, particularly in remote areas, but also requires training and resources to implement effectively." },
+                { question: "How do social movements influence public policy?", answer: "Social movements can shape public policy by raising awareness, mobilizing communities, and advocating for change. Successful movements often lead to legislative reforms, influencing government priorities and societal norms." },
+                { question: "What are the impacts of migration on economies?", answer: "Migration can have positive impacts on economies by filling labor shortages, stimulating growth, and fostering cultural diversity. However, it can also present challenges such as integration issues and pressure on public services." },
+                { question: "How does climate change affect biodiversity?", answer: "Climate change threatens biodiversity by altering habitats, disrupting ecosystems, and increasing extinction rates. Species that cannot adapt to rapid changes face survival risks, impacting ecosystem services and human livelihoods." },
+                { question: "What is sustainable development?", answer: "Sustainable development is a holistic approach to growth that meets current needs without compromising future generations' ability to meet their own. It integrates economic, social, and environmental considerations to promote resilience and equity." },
+                { question: "How do international agreements address environmental issues?", answer: "International agreements, such as the Paris Agreement, aim to unite countries in addressing global environmental challenges through shared commitments to reduce emissions, protect biodiversity, and promote sustainable practices." },
+                { question: "What factors contribute to food security?", answer: "Food security is influenced by factors such as agricultural productivity, access to markets, economic stability, and social infrastructure. Addressing these factors is crucial for ensuring all individuals have access to sufficient, safe, and nutritious food." },
+                { question: "What is the impact of advertising on consumer behavior?", answer: "Advertising influences consumer behavior by shaping perceptions, creating brand loyalty, and encouraging purchasing decisions. Effective advertising appeals to emotions and desires, impacting how consumers view products and services." },
+                { question: "How do environmental policies affect economic growth?", answer: "Environmental policies can drive economic growth by fostering innovation in sustainable technologies, creating green jobs, and improving public health outcomes. However, poorly designed policies may impose excessive burdens on businesses and hinder growth." },
+                { question: "What is the significance of cultural heritage?", answer: "Cultural heritage is vital for community identity, cohesion, and continuity. It fosters a sense of belonging and pride, contributes to tourism and economic activity, and enriches global diversity." }
+            ],
+            English: [
+                { question: "What are the key elements of a digital story?", answer: "Key elements of a digital story include a clear narrative arc, engaging visuals, sound effects or music, and a strong emotional connection. These elements work together to convey a message and resonate with the audience, enhancing the storytelling experience." },
+                { question: "How can one analyze character development in a novel?", answer: "Character development can be analyzed by examining changes in a character's personality, motivations, and relationships throughout the story. This involves identifying pivotal moments that influence growth and understanding the impact of external factors on the character." },
+                { question: "What techniques are used in persuasive writing?", answer: "Persuasive writing techniques include using strong arguments, emotional appeals, rhetorical questions, and evidence to support claims. Additionally, addressing counterarguments and establishing credibility are essential for convincing the audience." },
+                { question: "How does setting influence a story?", answer: "The setting establishes the context in which a story unfolds, influencing characters' actions, emotions, and the overall atmosphere. It can enhance themes and motifs, providing a backdrop that reflects or contrasts the characters' experiences." },
+                { question: "What role does dialogue play in character development?", answer: "Dialogue reveals character traits, motivations, and relationships, allowing readers to understand characters' perspectives and emotions. It can also advance the plot and highlight conflicts or themes present in the narrative." },
+                { question: "How can symbolism enhance a narrative?", answer: "Symbolism adds depth to a narrative by using objects, colors, or actions to represent larger ideas or themes. This enriches the story, encouraging readers to engage with the text on a more profound level and uncover hidden meanings." },
+                { question: "What are the elements of a successful feature article?", answer: "A successful feature article includes a compelling lead, thorough research, engaging anecdotes, and a strong narrative structure. It should inform, entertain, and resonate with the audience, providing insights into the topic." },
+                { question: "How can one evaluate sources for a research project?", answer: "Evaluating sources involves assessing credibility, accuracy, relevance, and bias. Consider the author's qualifications, the publication's reputation, and the date of publication to ensure reliable information." },
+                { question: "What techniques can be used to engage an audience during a presentation?", answer: "Techniques to engage an audience include storytelling, interactive elements, visual aids, and varying vocal delivery. Tailoring content to the audience's interests and encouraging participation can enhance engagement." },
+                { question: "How do themes enhance literary analysis?", answer: "Themes provide insight into the underlying messages of a literary work, guiding analysis and interpretation. Recognizing recurring themes allows readers to connect with the text on a deeper level and understand its cultural or social implications." },
+                { question: "What is the importance of revision in writing?", answer: "Revision is crucial as it allows writers to refine their ideas, improve clarity, and enhance overall quality. It involves reviewing structure, content, and style, ensuring that the final product effectively communicates the intended message." },
+                { question: "How can one develop a strong thesis statement?", answer: "A strong thesis statement presents a clear, concise argument that guides the direction of the essay. It should be specific, debatable, and reflect the main points that will be discussed in the body of the text." },
+                { question: "What strategies can be used to improve writing skills?", answer: "Strategies to improve writing skills include reading extensively, practicing regularly, seeking feedback, and studying grammar and style. Engaging with diverse texts enhances understanding and informs personal writing style." },
+                { question: "What role does imagery play in poetry?", answer: "Imagery evokes sensory experiences, allowing readers to visualize scenes and feel emotions associated with the poem. It enhances the emotional impact and helps convey the poem's themes more effectively." },
+                { question: "How can one interpret the tone of a literary work?", answer: "Interpreting tone involves analyzing the author's choice of words, sentence structure, and overall style. Tone reflects the author's attitude toward the subject matter and influences how readers perceive the text." },
+                { question: "What are the characteristics of effective storytelling?", answer: "Effective storytelling includes a well-defined plot, relatable characters, and a clear message or theme. It engages the audience, evokes emotions, and creates a memorable experience that resonates beyond the narrative." }
+            ],
+            Math: [
+                { question: "How do you calculate the area of a rectangle?", answer: "To calculate the area of a rectangle, multiply its length by its width. The formula is A = l × w, where A is the area, l is the length, and w is the width. This gives the total square units contained within the rectangle." },
+                { question: "What is the formula for the surface area of a cylinder?", answer: "The surface area of a cylinder can be calculated using the formula SA = 2πr(h + r), where r is the radius of the base and h is the height. This accounts for the area of the two circular bases and the curved surface." },
+                { question: "How do you find the volume of a prism?", answer: "To find the volume of a prism, use the formula V = B × h, where B is the area of the base and h is the height. This formula multiplies the base area by the height, resulting in the total cubic units." },
+                { question: "What does rearranging a formula involve?", answer: "Rearranging a formula involves manipulating the equation to solve for a different variable. This can include adding, subtracting, multiplying, or dividing both sides of the equation, maintaining the equality throughout." },
+                { question: "What are the trigonometric ratios for a right triangle?", answer: "The trigonometric ratios for a right triangle are sine (sin), cosine (cos), and tangent (tan). These ratios are defined as follows: sin(θ) = opposite/hypotenuse, cos(θ) = adjacent/hypotenuse, and tan(θ) = opposite/adjacent." },
+                { question: "How do you find the lengths of the sides of a triangle?", answer: "To find the lengths of the sides of a triangle, you can use the Pythagorean theorem for right triangles (a² + b² = c²) or apply the law of sines or cosines for non-right triangles, depending on the known values." },
+                { question: "What is the method for finding angles in a triangle?", answer: "To find angles in a triangle, you can use the sine, cosine, or tangent functions depending on the information given. For example, if two sides are known, the cosine rule can be used to calculate the angles." },
+                { question: "How do angles of elevation and depression work?", answer: "Angles of elevation are measured from the horizontal line upward, while angles of depression are measured downward. These angles can be used in problems involving heights and distances, often employing trigonometric ratios." },
+                { question: "What are bearings in navigation?", answer: "Bearings are used in navigation to indicate direction, expressed in degrees from the North (0°). A bearing of 90° indicates East, 180° South, and 270° West. They help in determining precise locations on a map." },
+                { question: "How do you solve mixed two-dimensional problems?", answer: "To solve mixed two-dimensional problems, identify the geometric shapes involved, apply the relevant formulas for area or perimeter, and consider units of measurement to arrive at the solution." },
+                { question: "What is the unit circle, and why is it important?", answer: "The unit circle is a circle with a radius of 1 centered at the origin of a coordinate plane. It is important for defining trigonometric functions and their values for all angles, simplifying calculations in trigonometry." },
+                { question: "What are congruent and similar triangles?", answer: "Congruent triangles have the same shape and size, while similar triangles have the same shape but may differ in size. This distinction is key in solving geometric problems and understanding relationships between figures." },
+                { question: "How do you calculate probabilities using Venn diagrams?", answer: "Venn diagrams help visualize probabilities and relationships between events. To calculate probabilities, identify the areas representing events and their intersections, using these to find probabilities of individual and combined events." },
+                { question: "What is a probability tree diagram?", answer: "A probability tree diagram is a visual representation of possible outcomes for an event. Each branch represents a possible outcome and its associated probability, helping calculate the likelihood of various combined events." },
+                { question: "What is the significance of conditional statements in probability?", answer: "Conditional statements express the likelihood of one event occurring given that another event has already occurred. They are crucial in understanding dependencies between events and calculating conditional probabilities." },
+                { question: "What are operations with surds, and why are they useful?", answer: "Operations with surds involve simplifying and manipulating square roots or irrational numbers. They are useful for exact calculations in geometry and algebra, allowing precise mathematical expressions without rounding." }
+            ]
+        };
+
+        function createFlashcards(subject) {
+            const flashcardContainer = document.getElementById("flashcards");
+            flashcardContainer.innerHTML = ''; // Clear existing cards
+            flashcards[subject].forEach(card => {
+                const cardElement = document.createElement("div");
+                cardElement.className = "flashcard";
+                cardElement.innerHTML = `
+                    <h3>${card.question}</h3>
+                    <p>${card.answer}</p>
+                `;
+                flashcardContainer.appendChild(cardElement);
+            });
+        }
+
+        document.getElementById("hass").addEventListener("click", () => {
+            createFlashcards("HASS");
+        });
+
+        document.getElementById("english").addEventListener("click", () => {
+            createFlashcards("English");
+        });
+
+        document.getElementById("math").addEventListener("click", () => {
+            createFlashcards("Math");
+        });
+    </script>
 </body>
 </html>
