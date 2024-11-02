@@ -25,6 +25,26 @@ const flashcards = [
     { question: "How do you structure an essay on a film?", answer: "Introduction with a thesis statement, body paragraphs analyzing key elements, and a conclusion." },
     { question: "What are common themes in contemporary literature?", answer: "Identity, social justice, and the human condition are frequently explored themes." },
     { question: "What techniques can enhance your storytelling in a digital story?", answer: "Use pacing, sound design, and visual transitions to maintain audience engagement." },
+
+    // Math Flashcards
+    { question: "What is the formula for the area of a rectangle?", answer: "Area = length × width." },
+    { question: "How do you calculate the surface area of a prism?", answer: "Surface Area = 2 × Base Area + Perimeter × Height." },
+    { question: "What is the volume of a cylinder?", answer: "Volume = π × radius² × height." },
+    { question: "How do you rearrange a formula for x?", answer: "Isolate x on one side of the equation using inverse operations." },
+    { question: "What are the trigonometric ratios?", answer: "Sine (sin), Cosine (cos), and Tangent (tan) relate the angles to the sides of a right triangle." },
+    { question: "How can you find the length of a side in a right triangle?", answer: "Use the Pythagorean theorem: a² + b² = c²." },
+    { question: "How do you calculate angles of elevation and depression?", answer: "Use trigonometric ratios based on the height and distance involved." },
+    { question: "What are bearings?", answer: "Bearings are directions measured in degrees from the north in a clockwise direction." },
+    { question: "What is the unit circle?", answer: "A circle with a radius of 1 centered at the origin of a coordinate plane, used to define trigonometric functions." },
+    { question: "How do you prove congruence of triangles?", answer: "Use congruence criteria such as SSS, SAS, and ASA." },
+    { question: "What is a Venn diagram?", answer: "A diagram that shows all possible logical relations between a finite collection of different sets." },
+    { question: "What is a probability tree diagram?", answer: "A graphical representation of all possible outcomes of an event and their probabilities." },
+    { question: "What are mutually exclusive events?", answer: "Events that cannot occur at the same time." },
+    { question: "What is conditional probability?", answer: "The probability of an event given that another event has occurred." },
+    { question: "What are fractional indices?", answer: "A way to express roots using exponents; for example, x^(1/n) is the n-th root of x." },
+    { question: "How do you calculate compound interest?", answer: "Compound Interest = Principal × (1 + Rate/n)^(nt) - Principal." },
+    { question: "What is depreciation?", answer: "The decrease in value of an asset over time, often calculated on a straight-line or declining balance basis." },
+    { question: "What is growth and decay in mathematical terms?", answer: "Growth refers to an increase over time, while decay refers to a decrease, often modeled with exponential functions." },
 ];
 
 const container = document.getElementById('flashcards-container');
