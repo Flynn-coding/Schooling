@@ -1,39 +1,78 @@
 const flashcards = {
     HASS: [
-        { question: "What are the key environmental changes impacting our planet today?", answer: "Key changes include climate change, primarily driven by greenhouse gas emissions, leading to severe weather patterns, rising sea levels, and ecological disruptions. Deforestation results in habitat loss and reduced biodiversity, while pollution severely impacts air and water quality." },
-        { question: "What are the components of human wellbeing?", answer: "Human wellbeing is multidimensional, encompassing physical health, mental stability, emotional resilience, and social connections, which are essential for a fulfilled life and active participation in community affairs." },
-        // Additional HASS flashcards...
+        { question: "What are the key environmental changes impacting our planet today?", answer: "Key changes include climate change driven by human activities such as burning fossil fuels and deforestation, which result in rising global temperatures, increased frequency of extreme weather events, loss of biodiversity, and disruptions to ecosystems. These changes pose significant threats to food security, water resources, and human health." },
+        { question: "What is the significance of human wellbeing in society?", answer: "Human wellbeing is critical for societal stability and growth, encompassing economic, social, and health dimensions. It is a measure of individuals' quality of life, influenced by access to healthcare, education, and social services. Enhanced wellbeing leads to productive societies, reduced crime rates, and improved economic outcomes." },
+        { question: "How do governments address environmental changes?", answer: "Governments employ a variety of strategies to tackle environmental issues, including legislative measures such as the establishment of environmental protection laws, investment in renewable energy technologies, and participation in international treaties aimed at climate action, such as the Paris Agreement. They also promote public awareness campaigns to encourage sustainable practices among citizens." },
+        { question: "What factors contribute to a country's human wellbeing?", answer: "Human wellbeing is affected by a myriad of factors including economic stability, healthcare accessibility, educational opportunities, environmental quality, and social inclusion. Countries with strong social safety nets, equitable healthcare systems, and educational equity tend to have higher levels of wellbeing." },
+        { question: "What role does technology play in managing environmental changes?", answer: "Technology plays a pivotal role in environmental management through innovations such as renewable energy sources, advanced agricultural practices, and data analytics for climate modeling. Technologies like remote sensing allow for better monitoring of environmental changes, while smart technologies enhance energy efficiency and reduce waste." },
+        { question: "How do social, economic, and environmental factors interrelate?", answer: "These factors are interdependent; economic growth can lead to environmental degradation if not managed sustainably, while social equity ensures that all members of society benefit from economic resources. Sustainable development seeks to balance these aspects to ensure long-term viability and fairness." },
+        { question: "What impact does globalization have on local cultures?", answer: "Globalization can lead to cultural homogenization, where unique cultural identities and traditions are overshadowed by dominant global cultures, often leading to the loss of indigenous languages and customs. Conversely, globalization can foster cultural exchange and hybridization, enriching local cultures through exposure to diverse influences." },
+        { question: "How do renewable resources contribute to sustainability?", answer: "Renewable resources are integral to sustainable development as they provide alternatives to finite fossil fuels. Utilizing wind, solar, and hydroelectric energy reduces greenhouse gas emissions and reliance on non-renewable resources, thereby mitigating climate change and promoting energy security." },
+        { question: "What strategies can communities adopt to improve wellbeing?", answer: "Communities can adopt strategies such as enhancing access to education and healthcare, promoting social cohesion through community programs, ensuring food security, and investing in mental health resources. Such initiatives empower individuals, fostering resilience and improving collective wellbeing." },
+        { question: "What is the concept of environmental justice?", answer: "Environmental justice emphasizes the fair distribution of environmental benefits and burdens, advocating that marginalized communities, often disproportionately affected by environmental hazards, receive equitable access to resources and protection from environmental harm." },
+        { question: "What role do NGOs play in promoting sustainability?", answer: "Non-governmental organizations (NGOs) play a crucial role by raising awareness about environmental issues, conducting research, lobbying for policy changes, and implementing grassroots initiatives that promote conservation and sustainable practices at the local level." },
+        { question: "How do demographic changes affect human wellbeing?", answer: "Demographic changes, such as aging populations or migration trends, significantly influence human wellbeing by altering the demand for healthcare, housing, and education services, necessitating adaptive strategies in policy and resource allocation." },
+        { question: "What is the relationship between biodiversity and ecosystem services?", answer: "Biodiversity enhances ecosystem resilience and productivity, providing vital services such as pollination, nutrient cycling, and climate regulation. The loss of biodiversity can disrupt these services, leading to negative impacts on food security and human health." },
+        { question: "How do cultural values influence environmental policies?", answer: "Cultural values shape societal attitudes towards the environment and conservation efforts. Societies that prioritize ecological sustainability often implement stronger environmental regulations and community engagement strategies, reflecting a collective commitment to preserving natural resources." },
+        { question: "What are the consequences of industrialization on the environment?", answer: "Industrialization typically leads to significant environmental consequences, including increased pollution, resource depletion, habitat destruction, and climate change. Sustainable industrial practices and regulatory frameworks are essential to mitigate these adverse impacts." },
     ],
     English: [
-        { question: "What are the key elements of a digital story?", answer: "A digital story must integrate a compelling narrative structure with rich visual imagery, effective sound design, and emotional engagement to create a narrative that resonates with the audience and conveys deeper themes." },
-        { question: "What should you analyze in an advertisement response?", answer: "Analyze the target audience by identifying demographic markers, assess persuasive techniques such as ethos, pathos, and logos, and evaluate the effectiveness of the message in influencing consumer behavior." },
-        // Additional English flashcards...
+        { question: "What are the key elements of a digital story?", answer: "A digital story integrates narrative techniques with multimedia elements—such as images, video clips, and sound—to convey a personal or fictional story effectively. It should have a clear narrative arc, character development, and emotional resonance, allowing the audience to connect with the storyteller’s experience." },
+        { question: "What should you analyze in an advertisement response?", answer: "In analyzing an advertisement, one should evaluate the target demographic, identify persuasive techniques (e.g., ethos, pathos, logos), examine the visual and textual elements for coherence and impact, and assess the overall effectiveness of the advertisement in achieving its marketing objectives." },
+        { question: "What constitutes a strong thesis statement in an essay?", answer: "A strong thesis statement articulates a clear, specific argument that provides direction for the essay. It should encapsulate the main idea and outline the points that will be discussed, establishing a foundation for analysis and evidence." },
+        { question: "How can literary devices enhance a narrative?", answer: "Literary devices such as imagery, symbolism, and foreshadowing enrich the narrative by adding layers of meaning, creating vivid mental pictures, and building suspense, which collectively engage the reader and deepen their emotional investment in the story." },
+        { question: "What techniques can be used in a multimodal presentation?", answer: "Techniques in a multimodal presentation include the use of visuals (infographics, photographs), audio elements (narration, music), and interactive features (videos, quizzes) to create a dynamic storytelling experience that appeals to diverse learning styles and enhances comprehension." },
+        { question: "What are the components of a persuasive argument?", answer: "A persuasive argument includes a clear claim supported by credible evidence, a logical structure that addresses counterarguments, and an emotional appeal that resonates with the audience, ultimately guiding them toward a specific conclusion." },
+        { question: "How do narrative perspectives affect storytelling?", answer: "Narrative perspectives, such as first-person or third-person omniscient, profoundly influence how the story is conveyed, affecting reader engagement and emotional connection. First-person narratives create intimacy, while third-person perspectives can provide a broader context." },
+        { question: "What is the significance of character development in literature?", answer: "Character development is crucial for creating believable and relatable characters. Dynamic characters, who evolve throughout the narrative, reflect complex human experiences, fostering empathy and a deeper understanding of the story’s themes." },
+        { question: "How can themes enhance the depth of a story?", answer: "Themes serve as the underlying messages of a narrative, prompting readers to explore universal concepts such as love, conflict, and morality. Well-developed themes enrich the narrative by encouraging critical thinking and personal reflection." },
+        { question: "What role does setting play in a story?", answer: "Setting establishes the time and place of the narrative, influencing the mood, character behavior, and plot development. It can also reflect broader themes and societal issues, enhancing the reader's understanding of the characters' motivations and challenges." },
+        { question: "What are common strategies for analyzing poetry?", answer: "Common strategies for poetry analysis include examining the poem's structure, rhythm, and meter; interpreting imagery and symbolism; and considering the poet's use of sound devices (like alliteration and assonance) to enhance meaning and evoke emotion." },
+        { question: "How can context affect the interpretation of a text?", answer: "Context—historical, cultural, or biographical—shapes readers' interpretations by providing background knowledge that enriches understanding. It allows readers to see how societal norms and events influence the text's themes and characters." },
+        { question: "What techniques do authors use to create suspense?", answer: "Authors create suspense through techniques such as pacing, cliffhangers, and foreshadowing. These elements keep readers on edge, heightening emotional engagement and anticipation for the unfolding plot." },
+        { question: "What is the impact of dialogue in literature?", answer: "Dialogue serves as a critical tool for revealing character motivations, advancing the plot, and establishing relationships. It can convey subtext and tension, making it an essential component of narrative dynamics." },
+        { question: "How can writing style influence a narrative?", answer: "An author's writing style—defined by word choice, syntax, and tone—profoundly impacts how a narrative is perceived. A unique style can evoke specific emotions and shape readers' experiences, making the narrative more memorable." },
     ],
     Math: [
-        { question: "What is the formula for the area of a rectangle?", answer: "The area of a rectangle is calculated using the formula Area = length × width. This measurement is crucial for understanding space allocation in various real-life applications." },
-        { question: "How do you calculate the surface area of a prism?", answer: "Surface Area is determined using the formula Surface Area = 2 × Base Area + Perimeter × Height. This approach accounts for both the bases and the lateral faces, providing a comprehensive understanding of the object's dimensions." },
-        // Additional Math flashcards...
+        { question: "What is the formula for the area of a rectangle?", answer: "The area of a rectangle is calculated using the formula Area = length × width. This concept is fundamental in various practical applications such as land measurement, architecture, and design, providing a basis for understanding two-dimensional space." },
+        { question: "How do you calculate the surface area of a cylinder?", answer: "The surface area of a cylinder is calculated using the formula Surface Area = 2πr(h + r), where r is the radius of the base and h is the height. This formula accounts for both the curved surface and the area of the two circular bases, relevant in real-world applications such as manufacturing and packaging." },
+        { question: "What is the significance of the Pythagorean theorem?", answer: "The Pythagorean theorem, stated as a² + b² = c², relates the lengths of the sides of a right triangle. It is significant in various fields, including architecture and navigation, as it allows for the calculation of distances and the relationship between angles and sides." },
+        { question: "How can you find the slope of a line?", answer: "The slope of a line is determined using the formula Slope (m) = (y₂ - y₁) / (x₂ - x₁), where (x₁, y₁) and (x₂, y₂) are coordinates of two points on the line. The slope indicates the line's steepness and direction, which is essential in understanding linear relationships." },
+        { question: "What is the quadratic formula and when is it used?", answer: "The quadratic formula, x = (-b ± √(b² - 4ac)) / 2a, is used to find the roots of a quadratic equation ax² + bx + c = 0. It is applicable when factoring is challenging, allowing for the determination of x-intercepts in polynomial functions." },
+        { question: "How do you calculate the mean of a data set?", answer: "To calculate the mean, sum all values in the data set and divide by the number of values. The mean represents the average and is a measure of central tendency, providing insights into the data's overall behavior and trends." },
+        { question: "What is the difference between permutations and combinations?", answer: "Permutations consider the order of selection, while combinations do not. Permutations are used when the arrangement matters (e.g., races), while combinations are used when only the group matters (e.g., lottery draws). This distinction is essential in probability and statistics." },
+        { question: "What is a linear function and how is it represented?", answer: "A linear function can be represented by the equation y = mx + b, where m is the slope and b is the y-intercept. Graphically, it forms a straight line, reflecting constant rates of change, relevant in economics and engineering." },
+        { question: "How do you solve a system of equations?", answer: "A system of equations can be solved using various methods, including substitution, elimination, or matrix operations. The solution represents the point(s) where the equations intersect, providing insights into real-world scenarios such as supply and demand." },
+        { question: "What is the concept of a function in mathematics?", answer: "A function is a relationship between two sets, where each input is associated with exactly one output. Functions are fundamental in mathematics as they model relationships and changes across various fields, including physics and economics." },
+        { question: "How do you find the greatest common divisor (GCD) of two numbers?", answer: "The GCD can be found using the prime factorization method or the Euclidean algorithm, which involves repeated division. The GCD is useful in simplifying fractions and solving problems involving ratios." },
+        { question: "What are the properties of exponents?", answer: "Properties of exponents include rules such as a^m × a^n = a^(m+n) and (a^m)^n = a^(mn). Understanding these properties is crucial for simplifying expressions and solving equations involving exponential functions." },
+        { question: "What is the significance of the unit circle in trigonometry?", answer: "The unit circle is essential in trigonometry as it defines sine and cosine values for angles, facilitating the understanding of periodic functions and their applications in physics, engineering, and computer science." },
+        { question: "How do you calculate the probability of an event?", answer: "The probability of an event is calculated as P(E) = Number of favorable outcomes / Total number of outcomes. Probability is crucial in statistics, guiding decision-making in uncertain scenarios such as gambling, finance, and risk assessment." },
+        { question: "What is the relationship between ratios and proportions?", answer: "Ratios express the relative sizes of two quantities, while proportions indicate that two ratios are equal. Understanding these concepts is vital for solving problems in various contexts, such as scale models and recipes." },
     ]
 };
 
-const container = document.querySelectorAll('.flashcards-container');
-
-Object.keys(flashcards).forEach((subject, index) => {
-    const flashcardsForSubject = flashcards[subject];
-    flashcardsForSubject.forEach(card => {
-        const flashcard = document.createElement('div');
-        flashcard.className = 'flashcard';
-        flashcard.innerHTML = `
-            <div class="question">${card.question}</div>
-            <div class="answer" style="display:none;">${card.answer}</div>
-        `;
+// Function to create flashcards
+function createFlashcards(subject) {
+    const flashcardContainer = document.getElementById("flashcards");
+    flashcardContainer.innerHTML = ""; // Clear previous cards
+    flashcards[subject].forEach(card => {
+        const cardElement = document.createElement("div");
+        cardElement.classList.add("flashcard");
         
-        // Add event listener to toggle answer display
-        flashcard.addEventListener('click', () => {
-            const answer = flashcard.querySelector('.answer');
-            answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
-        });
+        const questionElement = document.createElement("h3");
+        questionElement.textContent = card.question;
 
-        container[index].appendChild(flashcard);
+        const answerElement = document.createElement("p");
+        answerElement.textContent = card.answer;
+
+        cardElement.appendChild(questionElement);
+        cardElement.appendChild(answerElement);
+        flashcardContainer.appendChild(cardElement);
     });
-});
+}
+
+// Event listeners for subject selection
+document.getElementById("hass").addEventListener("click", () => createFlashcards("HASS"));
+document.getElementById("english").addEventListener("click", () => createFlashcards("English"));
+document.getElementById("math").addEventListener("click", () => createFlashcards("Math"));
